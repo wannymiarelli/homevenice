@@ -1,0 +1,510 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700);
+$primary-color: #0047B1;
+$primary-color-dark: #013f9b;
+$secondary-color: #ee205e;
+$secondary-color-dark: #0d1b2f;
+$header-height: 80px;
+
+body,html{
+  font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: $primary-color;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.clear-fix{
+  clear: both;
+}
+
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
+}
+
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
+}
+
+.site-wrapper{
+  position: relative;
+  &:before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.08;
+    background-position: 0px 0px;
+    -webkit-animation: backgroundScroll 20s linear infinite;
+    animation: backgroundScroll 20s linear infinite;
+  }
+  .site-content{
+    position: relative;
+    z-index: 2;
+    .site-cookie{
+      background-color: $secondary-color-dark;
+      min-height: 0px;
+      color: #FFF;
+      padding-left: 15px;
+      padding-right: 15px;
+      box-shadow: inset 0 -5px 5px -2px rgba(0,0,0,0.6);
+      display: table;
+      width: 100%;
+      .cookie-wrapper{
+        display: table-cell;
+        vertical-align: middle;
+        display: none;
+        opacity: 0;
+        .message{
+          float: left;
+          width: 80%;
+          img{
+            height: 35px;
+            vertical-align: middle;
+            width: auto;
+            margin-right: 10px;
+          }
+        }
+        .gotcha{
+          float: left;
+          width: 20%;
+          text-align: right;
+          color: $secondary-color;
+          vertical-align: middle;
+          cursor: pointer;
+          font-weight: 800;
+          a{
+            color: $secondary-color;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .site-header{
+      height: $header-height;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      .logo{
+        width: 20%;
+        height: 100%;
+        float: left;
+        img{
+          height: 100%;
+          width: auto;
+        }
+      }
+      .soon-on{
+        float: right;
+        text-align: right;
+        width: 20%;
+        color: #FFF;
+        line-height: $header-height;
+      }
+    }
+
+    .site-cta{
+      padding-bottom: 100px;
+      color: #FFF;
+      text-align: center;
+      .cta-wrapper{
+        display: table;
+        height: 100%;
+        width: 100%;
+        .cta-content{
+          display: table-cell;
+          width: 100%;
+          height: 100%;
+          vertical-align: middle;
+          h1{
+            font-size: 2.5rem;
+            margin-top: 0;
+            small{
+              font-size: 2.5rem;
+            }
+          }
+          .cta-newsletter{
+            p{
+              font-size: 1.5rem;
+              font-weight: 200;
+            }
+            .input-wrapper{
+              background-color: #FFF;
+              position: relative;
+              width: 25%;
+              padding: 0.5rem;
+              border-radius: 3px;
+              margin: 0 auto;
+              height: 45px;
+              &:after{
+                content: ' ';
+                position: absolute;
+                top: 5px;
+                left: 0;
+                width: 100%;
+                border-radius: 3px;
+                background-color: $primary-color-dark;
+                height: 100%;
+                z-index: -1;
+              }
+              input{
+                border: 0;
+                width: 100%;
+                height: 100%;
+                font-size: 1.2rem;
+                font-weight: 300;
+                &:focus{
+                  outline: 0;
+                }
+              }
+              .send-button{
+                height: 100%;
+                background-color: $secondary-color;
+                width: 50px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .site-animation{
+      position: absolute;
+      width: 100%;
+      left: 0;
+
+      .towns{
+        position: absolute;
+        top: -55%;
+        opacity: 0.3;
+        width: 100%;
+        left: 0;
+        z-index: 50;
+        text-align: center;
+        ul{
+          margin: 0;
+          padding: 0;
+          padding-left: 15%;
+          padding-right: 10%;
+          list-style: none;
+          li{
+            display: inline-block;
+            width: 20%;
+            text-align: center;
+            position: relative;
+          }
+        }
+        img{
+          width: 80%;
+          height: auto;
+          position: relative;
+          top: 500px;
+        }
+
+        .town{
+          position: relative;
+        }
+
+
+
+      }
+
+      .globe{
+        max-width: 400px;
+        width: 60%;
+        margin: 0 auto;
+        position: relative;
+        display: table;
+        z-index: 60;
+        img.glb{
+          width: 100%;
+          height: 100%;
+          position: relative;
+          z-index: 60;
+          bottom: 0;
+          display: table-cell;
+          vertical-align: bottom;
+        }
+
+        img.marker{
+          height: 40%;
+          width: auto;
+          position: absolute;
+          z-index: 90;
+        }
+
+        img.marker.left{
+          top: -120%;
+          left: 7%;
+          display: none;
+        }
+
+        img.marker.right{
+          top: -120%;
+          right: 0;
+          display: none;
+        }
+
+        .dots{
+          position: absolute;
+          top: 0;
+
+          .overlay{
+            position: absolute;
+            top: 0;
+            width: 124%;
+            z-index: 80;
+          }
+
+          img.dot{
+            max-height: 50px;
+            width: auto;
+            position: relative;
+            z-index: 90;
+          }
+
+          img.line.line-left{
+            position: absolute;
+            top: 5%;
+            transform: rotate(14deg);
+            left: 30%;
+            z-index: 80;
+            width: 124%;
+          }
+
+          img.overlay.left{
+            top: 5%;
+            left: 30%;
+            transform: rotate(14deg);
+          }
+
+          img.overlay.right{
+            top: -20%;
+            left: -40%;
+            transform: rotate(30deg);
+          }
+
+          img.line.line-right{
+            position: absolute;
+            top: -20%;
+            left: -40%;
+            z-index: 80;
+            width: 124%;
+            -moz-transform: scaleX(-1) rotate(30deg);
+            -o-transform: scaleX(-1) rotate(30deg);
+            -webkit-transform: scaleX(-1) rotate(30deg);
+            transform: scaleX(-1) rotate(30deg);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+          }
+
+        }
+
+        .dot.one, .dot.two{
+          opacity: 0;
+        }
+
+        .dots.left{
+          left: -30%;
+          .dot.one{
+
+          }
+          .dot.two{
+            position: relative;
+            top: 5%;
+            left: 30%;
+          }
+        }
+
+        .dots.right{
+          right: -35%;
+          top: 20%;
+          .dot.one{
+            position: relative;
+            top: -15px;
+            left: -25%;
+          }
+          .dot.two{
+            top: -10px;
+            left: 8%;
+          }
+        }
+
+      }
+
+    }
+  }
+
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 667px) {
+
+
+
+    .site-wrapper{
+
+      .site-content{
+        .site-cookie{
+          .cookie-wrapper{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            .message{
+              width: 100%;
+              text-align: center;
+              font-size: 0.8rem;
+              img{
+                height: 20px;
+                width: auto;
+              }
+            }
+            .gotcha{
+              margin-top: 10px;
+              width: 100%;
+              text-align: center;
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        .site-animation{
+
+          .towns{
+            img{
+              width: 100%;
+            }
+            .town.one{
+              top: -5px;
+              left: -5px;
+            }
+            .town.two{
+              top: -20px;
+            }
+            .town.three{
+              top: -25px;
+            }
+            .town.four{
+              top: -15px;
+            }
+            .town.five{
+              top: 0px;
+              right: -10px;
+            }
+          }
+
+          .globe{
+            width: 50%;
+            .dots{
+              position: absolute;
+              top: 0;
+              img.dot{
+                max-height: 30px;
+                width: auto;
+              }
+            }
+
+            .dots.left{
+              left: -40%;
+              .dot.one{
+                left: 0%;
+              }
+              .dot.two{
+                top: 5px;
+              }
+            }
+
+            .dots.right{
+              right: -46%;
+              top: 20%;
+              .dot.one{
+
+              }
+              .dot.two{
+                top: -5px;
+                right: -6%;
+              }
+            }
+          }
+        }
+
+        .site-header{
+          .soon-on{
+            display: none;
+          }
+          .logo{
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        .site-cta{
+          padding-top: 0px;
+          padding-bottom: 0px;
+          .cta-wrapper{
+            .cta-content{
+
+              h1{
+                font-size: 1.4rem;
+                margin-top: 0;
+                small{
+                  font-size: 1.4rem;
+                }
+              }
+
+              .cta-newsletter{
+
+                p{
+                  font-size: 1.2rem;
+                }
+
+                .input-wrapper{
+                  width: 90%;
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
